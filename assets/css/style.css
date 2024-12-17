@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-weight: 800;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/loginpage.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+.register_form,
+.login_form {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/loginpage.png);
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Container Styling */
+.container {
+    background: rgb(124 124 124 / 55%);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Logo Image Styling */
+.logo-img {
+    max-width: 60px;
+    object-fit: cover;
+    border-radius: 15%;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings and Text */
+.H_text {
+    color: #fff;
+    font-family: "Outfit", sans-serif;
+    font-size: 30px;
+}
+
+.P_text {
+    color: #d3d3d3;
+    font-size: 20px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 100;
+}
+
+/* Form Controls */
+.form-control {
+    width: 100%;
+    font-size: 0.875rem;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form_placeholder::placeholder {
+    color: #b5b5b5;
+    font-size: 0.875rem;
+}
+
+/* Icons */
+.L_box .icon_email,
+.L_box .eye_icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon_email {
+    left: 15px;
+    font-size: 1rem;
+    color: #b5b5b5;
+}
+
+/* Eye Icon Styling */
+.lock-icon {
+    position: absolute;
+    left: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #b5b5b5;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #b5b5b5;
+    cursor: pointer;
+}
+
+.form-control {
+    padding-left: 2.5rem; 
+}
+
+.form-control:focus, 
+.register_btn:focus, 
+.google_btn:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+
+/* Buttons */
+.register_btn,
+.google_btn {
+    background-color: #0c0d2b;
+    border: 1px solid #0c0d2b;
+    border-radius: 15px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.register_btn:hover,
+.google_btn:hover {
+    color: #0c0d2b;
+    background-color: white;
+    border: 1px solid #0c0d2b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .logo-img {
+        max-width: 120px;
+    }
+}

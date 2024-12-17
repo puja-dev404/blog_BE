@@ -1,0 +1,36 @@
+.theme-btn {
+    border: none;
+    padding: 14px 20px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 16px;
+    background-color: #0c0d2b;
+    color: white;
+    text-decoration: none;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.modal-header {
+    border-color: #727272;
+}
+
+.modal-footer {
+    border-color: #727272;
+}
+
+.theme-primary {
+    background-color: #582cff;
+}
+
+.theme-dark {
+    background-color: #0c0d2b;
+}

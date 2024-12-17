@@ -1,0 +1,216 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.hero-section {
+  min-height: 60vh;
+  background: url('/assets/images/fashon.jpg') #3a3b56;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Latest Posts Section */
+.Latest-posts h2 {
+  font-size: 2rem;
+  color: #333;
+  text-align: left; /* Left align the heading */
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.Latest-posts h2:hover {
+  color: #5f2486; 
+}
+
+/* Styling for the badge */
+.Latest-posts .badge {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.Latest-posts .text-muted {
+  font-size: 0.9rem;
+}
+.Latest-posts .post-meta img {
+  width: 40px;
+  height: 40px;
+}
+
+.Latest-posts .post-meta {
+  font-size: 1rem;
+  color: #555;
+  margin-left: auto; 
+}
+
+.Latest-section img,
+.latest-news img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.latest-news .news-item {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.latest-news .news-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.Latest-title,
+.news-title {
+  font-weight: bold;
+  margin-top: 1rem;
+ 
+}
+.image-slider {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-track img {
+  min-width: 100%;
+  height: auto;
+}
+
+
+/* Featured Posts */
+.Latest-posts {
+  background-color: #ffffff;
+}
+
+.Latest-posts .read-more {
+  color: #0c0d2b;
+  text-decoration: none;
+}
+
+
+.post-title {
+  font-weight: bold;
+  margin-top: 1rem;
+
+}
+.post-description {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+/* Popular Categories Section */
+.categories-section {
+  background-color: #f4f3f8;
+
+}
+
+.categories-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.category-item {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.category-item:hover {
+  background: #e9ecef;
+}
+
+.category-item i {
+  color: #d4af37; 
+}
+
+.category-item h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background: linear-gradient(90deg, #16161d, #211a47, #1d1a3a, #321c3d);
+  color: #fff;
+}
+
+.testimonials-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.testimonial-item {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ddd;
+  font-style: italic;
+  position: relative;
+}
+
+.testimonial-item i {
+  color: #d4af37; 
+}
+
+.testimonial-item h5 {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* Newsletter Subscription Section */
+.newsletter-section {
+  background: url('/Blogproject/assets/images/fashon.jpg') #3a3b56;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+color: #e9ecef;
+}
+
+.newsletter-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.newsletter-form input[type="email"] {
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.newsletter-form .btn-primary {
+  background-color: #d4af37;
+  border: none;
+}
+
+.newsletter-form .btn-primary:hover {
+  background-color: #b5952c;
+}
+
+.z-index-1 {
+  position: relative;
+  z-index: 1;
+}
+
+

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/dashboard.css">
+
+</head>
+<body>
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar"> 
+      <div class="sidebar-header text-center">
+        <img src="./assets/images/blog-img.png" alt="Logo" class="rounded-circle logo-img" />
+        <h2 class="zigblog-heading">Zigblog</h2>
+      </div>
+      <!-- Sidebar Navigation -->
+      <nav>
+        <ul class="nav flex-column mt-3">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#dashboard"><i class="fa-solid fa-house"></i> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tables"><i class="fa-solid fa-table"></i> Tables</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#categories"><i class="fa-solid fa-list"></i> Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#users"><i class="fa-solid fa-users"></i> Users</a>
+          </li>
+          <li class="nav-item mt-4">
+            <a class="nav-link" onclick="confirmLogout()">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout   
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    
+    <!-- navbar right side -->
+    <main class="content">
+      <!-- Settings Icon -->
+      <div class="user-settings d-flex align-items-center">
+        <!-- User Image -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUMVjrW07Cv9nj-W6k7CPJqG8JrtdjHU3Oxxjqz68Y4N2YX0OkBY1RfKb0z2SwydsMVYI&usqp=CAU" alt="User Image" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+        
+        <!-- User Info -->
+        <div class="user-info">
+            <span class="user-name d-block fw-bold">User Name</span>
+            <span class="user-email d-block  text-white" style="font-size: 0.9em;">user@example.com</span>
+        </div>
+        <!-- Dropdown Icon -->
+        <div class="dropdown">
+          <!-- Downward Arrow Icon for Dropdown -->
+          <i class="fa-solid fa-sort-down fa-2x text-white ms-2" id="userDropdown" data-bs-toggle="dropdown"></i>
+          <!-- Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li>
+                  <a class="dropdown-item text-white" href="profile.html">
+                      <i class="fa-solid fa-user text-white"></i> Profile
+                  </a>
+              </li>
+              <li>
+                  <a class="dropdown-item text-white" onclick="confirmLogout()">
+                      <i class="fa-solid fa-arrow-right-from-bracket text-white"></i> Logout
+                  </a>
+              </li>
+          </ul>
+      </div>
+      </div>
+      
+    </div>
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="dashboard">
+          <div class="header_text">
+            <h2>Dashboard</h2>
+
+          </div>
+          <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-5 main-content">
+            <div class="main-content">
+              <div class="action-cards d-flex justify-content-start gap-3 my-3">
+                <!-- Add Post Card -->
+                <div class="card custom-card position-relative">
+                  <div class="d-flex flex-column align-items-start p-3">
+                    <span class="card-number">1</span>
+                    <span class="card-text mt-2">Total Post</span>
+                    <i class="fa-solid fa-folder-plus position-absolute end-0 me-3"></i>
+                  </div>
+                </div>
+            
+                <!-- Manage Categories Card -->
+                <div class="card custom-card position-relative">
+                  <div class="d-flex flex-column align-items-start p-3">
+                    <span class="card-number">2</span>
+                    <span class="card-text mt-2">Categories</span>
+                    <i class="fa-solid fa-list position-absolute end-0 me-3"></i>
+                  </div>
+                </div>
+            
+                <!-- Manage Users Card -->
+                <div class="card custom-card position-relative">
+                  <div class="d-flex flex-column align-items-start p-3">
+                    <span class="card-number">3</span>
+                    <span class="card-text mt-2">Total Users</span>
+                    <i class="fa-solid fa-user position-absolute end-0 me-3"></i>
+                  </div>
+                </div>
+              </div>
+            </div>              
+            <div class="main-section p-4 rounded mx-auto" style="margin-bottom: 2rem;">
+              <!-- Search bar with filter option -->
+              <div class="search-bar mb-3 d-flex align-items-center justify-content-center">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search by Title">
+                  <button class="btn btn-outline-light" type="button">Search</button>
+                </div>
+                <button class="btn btn-outline-light ms-3" type="button" onclick="toggleDateFilter(this)">Filter by
+                  Date</button>
+              </div>
+
+              <!-- Date Filter Section -->
+              <div class="filter-date mb-3 d-none text-center">
+                <div class="d-flex justify-content-center">
+                  <input type="date" class="form-control me-2" placeholder="Start Date">
+                  <input type="date" class="form-control" placeholder="End Date">
+                </div>
+              </div>
+              <button class="btn btn-outline-light mt-3" type="button">
+                <i class="bi bi-plus"></i> Add Post
+              </button>
+              <!-- Table  -->
+              <div class="table-container">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Photo</th>
+                      <th>Title</th>
+                      <th>Content</th>
+                      <th>Created At</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUMVjrW07Cv9nj-W6k7CPJqG8JrtdjHU3Oxxjqz68Y4N2YX0OkBY1RfKb0z2SwydsMVYI&usqp=CAU" alt="Post Photo" width="50"></td>
+                      <td>Sample Post</td>
+                      <td>Sample content...</td>
+                      <td>2024-11-06</td>
+                      <td>
+                        <div class="dropdown">
+                          <button class="btn btn-link ps-4 text-white" type="button" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editModal"><i
+                                  class="fa fa-edit me-2"></i> Edit</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#deleteModal"><i class="fa fa-trash me-2"></i> Delete</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#viewModal"><i
+                                  class="fa fa-eye me-2"></i> View</a></li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Pagination -->
+              <nav aria-label="Page navigation example" class="pagination-container mt-3">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </main>
+        
+        </div>
+
+        <!-- tables sectin -->
+        <div class="tab-pane fade" id="tables">
+          <div class="header_text">
+            <h2>Tables</h2>
+
+          </div>
+          <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-5 main-content">
+            <div class="main-content">
+              <div class="d-flex justify-content-between my-3 text-center">
+                <a href="./index.html" class="theme-btn" onclick="openDialog('Add Post')">
+                  <i class="fa-solid fa-home"></i> Dashboard</a>
+
+                <button class="theme-btn" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                  <i class="fa-solid fa-plus-circle"></i> Add new Categories
+                </button>
+              </div>
+            </div>
+
+            <div class="main-section p-4 rounded mx-auto" style="margin-bottom: 2rem;">
+              <!-- Search bar with filter option -->
+              <div class="search-bar mb-3 d-flex align-items-center justify-content-center">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search by Title">
+                  <button class="btn btn-outline-light" type="button">Search</button>
+                </div>
+                <button class="btn btn-outline-light ms-3" type="button" onclick="toggleDateFilter(this)">Filter by
+                  Date</button>
+              </div>
+
+              <!-- Date Filter Section -->
+              <div class="filter-date mb-3 d-none text-center">
+                <div class="d-flex justify-content-center">
+                  <input type="date" class="form-control me-2" placeholder="Start Date">
+                  <input type="date" class="form-control" placeholder="End Date">
+                </div>
+              </div>
+
+              <!-- Table with dark background and white text -->
+              <div class="table-container">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Slug</th>
+                      <th>Created At</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Smaple Name</td>
+                      <td>Sample Description</td>
+                      <td>sample-content</td>
+                      <td>2024-11-06</td>
+                      <td>
+                        <div class="dropdown">
+                          <button class="btn btn-link ps-3 text-white" type="button" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                                <i class="fa fa-edit me-2"></i> Edit</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#categoryDeleteModal">
+                                <i class="fa fa-trash me-2"></i> Delete</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#categoryViewModal">
+                                <i class="fa fa-eye me-2"></i> View</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Pagination -->
+              <nav aria-label="Page navigation example" class="pagination-container mt-3">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </main>
+        </div>
+
+        <!-- categories section-->
+        <div class="tab-pane fade" id="categories">
+          <div class="header_text">
+            <h2>Categories Management</h2>
+          </div>
+          <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-5 main-content">
+            <div class="main-content">
+              <div class="d-flex justify-content-between my-3 text-center">
+                <a href="./index.html" class="theme-btn" onclick="openDialog('Add Post')">
+                  <i class="fa-solid fa-home"></i> Dashboard</a>
+
+                <button class="theme-btn" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                  <i class="fa-solid fa-plus-circle"></i> Add new Categories
+                </button>
+              </div>
+            </div>
+
+            <div class="main-section p-4 rounded mx-auto" style="margin-bottom: 2rem;">
+              <!-- Search bar with filter option -->
+              <div class="search-bar mb-3 d-flex align-items-center justify-content-center">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search by Title">
+                  <button class="btn btn-outline-light" type="button">Search</button>
+                </div>
+                <button class="btn btn-outline-light ms-3" type="button" onclick="toggleDateFilter(this)">Filter by
+                  Date</button>
+              </div>
+
+              <!-- Date Filter Section -->
+              <div class="filter-date mb-3 d-none text-center">
+                <div class="d-flex justify-content-center">
+                  <input type="date" class="form-control me-2" placeholder="Start Date">
+                  <input type="date" class="form-control" placeholder="End Date">
+                </div>
+              </div>
+
+              <!-- Table with dark background and white text -->
+              <div class="table-container">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Slug</th>
+                      <th>Created At</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Smaple Name</td>
+                      <td>Sample Description</td>
+                      <td>sample-content</td>
+                      <td>2024-11-06</td>
+                      <td>
+                        <div class="dropdown">
+                          <button class="btn btn-link ps-3 text-white" type="button" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                                <i class="fa fa-edit me-2"></i> Edit</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#categoryDeleteModal">
+                                <i class="fa fa-trash me-2"></i> Delete</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#categoryViewModal">
+                                <i class="fa fa-eye me-2"></i> View</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Pagination -->
+              <nav aria-label="Page navigation example" class="pagination-container mt-3">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </main>
+        </div>
+
+        <!-- users section -->
+        <div class="tab-pane fade" id="users">
+          <div class="header_text">
+            <h2>Users</h2>
+          </div>
+          <div class="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-5 main-content">
+            <!-- Back to Dashboard Button with spacing -->
+            <div class="d-flex justify-content-between my-3 text-center">
+              <a href="./index.html" class="theme-btn" onclick="openDialog('Add Post')">
+                <i class="fa-solid fa-home"></i> Dashboard</a>
+            </div>
+
+            <div class="main-section p-4 rounded mx-auto" style="margin-bottom: 2rem;">
+              <!-- Table with dark background and white text -->
+              <div class="table-container text-center">
+                <table class="table table-striped mx-auto">
+                  <thead>
+                    <tr>
+                      <th>#ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- User Rows -->
+                    <tr>
+                      <td>6</td>
+                      <td><span class="table-avatar bg-warning">QU</span> Quon</td>
+                      <td>vapis@mailinator.com</td>
+                      <td>Admin</td>
+                      <td> 
+                        <button class="btn status-btn inactive" onclick="toggleStatus(this)">
+                          <i class="fa-solid fa-toggle-off"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <!-- Edit and Delete buttons -->
+                        <div class="dropdown">
+                          <button class="btn btn-link ps-3 text-white" type="button" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#userModal"><i
+                                  class="fa fa-edit me-2"></i> Edit</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#userDeleteModal"><i class="fa fa-trash me-2"></i> Delete</a></li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>13</td>
+                      <td><span class="table-avatar bg-success">NR</span> Nell Richmond</td>
+                      <td>lahir@mailinator.com</td>
+                      <td>Admin</td>
+                      <td>
+                        <button class="btn status-btn inactive" onclick="toggleStatus(this)">
+                          <i class="fa-solid fa-toggle-off"></i>
+                        </button>
+                        
+                      </td>
+                      <td>
+                        <div class="dropdown">
+                          <button class="btn btn-link ps-3 text-white" type="button" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#userModal"><i
+                                  class="fa fa-edit me-2"></i> Edit</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#userDeleteModal"><i class="fa fa-trash me-2"></i> Delete</a></li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Pagination -->
+              <nav aria-label="Page navigation example" class="pagination-container mt-3">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <!-- Logout Modal -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to logout?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" onclick="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+    color: white;
+    padding: 15px 0; 
+}
+
+.navbar {
+    background-color: white !important;
+  }
+
+  /* Style for the buttons */
+  .btn-purple {
+    background-color: #0c0d2b; 
+    border-color: #0c0d2b; 
+  }
+  .btn-purple:hover {
+    background-color: #0c0d2b; 
+    border-color: #0c0d2b;
+  }
+
+  /* Adjusting the logo size and text */
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .navbar-brand img {
+    width: 50px; 
+    margin-right: 10px;
+  }
+
+  /* navbar fixed at the top */
+  .navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030; 
+  }
+
+ 
+/* Main content spacing */
+main {
+    padding-top: 50px; 
+}
+.featured_section .featured-article {
+  position: relative;
+  padding: 25px;
+  border-radius: 10px;
+  color: #fff;
+  overflow: hidden;
+  height: 500px; 
+}
+
+.featured_section .featured-article {
+  position: relative;
+  background-image: url('https://media.istockphoto.com/id/1312418309/photo/visual-contents-concept-social-networking-service-streaming-video-communication-network-3d.webp?a=1&b=1&s=612x612&w=0&k=20&c=13NK0iE0nryuo0y23_tQLVm_wECWAlIR7z_gJtQLUgg=');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  padding: 20px;
+}
+
+
+
+.F_heading, .F_text, .text-muted, .read-more-btn {
+  position: relative;
+  z-index: 4;
+  color: #fff;
+}
+
+button.read-more-btn {
+  background-color: #fff;
+  color: #0c0d2b;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button.read-more-btn:hover {
+  background-color: #f8f9fa; 
+  color: #0c0d2b;
+}
+
+/* Styling for list items in Popular Posts and Categories */
+.F_subsection .F_card ul li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px; 
+  color: green;
+}
+.featured_section {
+  padding-left: 20px; 
+}
+
+
+.F_subsection .F_card ul li::before {
+  content: '•'; 
+  position: absolute;
+  left: 0;
+  color: green;
+  font-size: 18px; 
+  line-height: 1;
+}
+
+.F_subsection .F_card ul li a {
+  color: green; 
+  text-decoration: underline;
+  text-decoration-color: gray; 
+}
+
+.F_subsection .F_card ul li a:hover {
+  color: darkgreen; 
+  text-decoration-color: darkgray; 
+}
+
+.F_card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+  
+/* Button styling for articles */
+.btn-outline-dark {
+    border-color: #0c0d2b;
+    color: #0c0d2b;
+}
+
+.btn-outline-dark:hover {
+    background-color: #0c0d2b;
+    color: white;
+}
+
+/* latest post */
+#latest {
+    padding: 40px 0;
+  }
+  
+  /* Card Styling */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Overlay and Button on Image */
+  .overlay {
+    background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .btn-grad {
+    background: rgba(255, 255, 255, 0.8);
+    color: #0c0d2b;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  
+  .btn-grad:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #0c0d2b;
+  }
+  
+  /* Date and Time Since Published */
+  .text-muted {
+    font-size: 0.9em;
+    color: #6c757d;
+  }
+  
+  /* Card Content Styling */
+  .card-title {
+    font-weight: bold;
+    color: #0c0d2b;
+  }
+  
+  .card-text {
+    color: #0c0d2b;
+  }
+  
+  /* Read More Button */
+  .btn-read-more {
+    color: #0c0d2b;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+  }
+  
+  .btn-read-more span {
+    margin-left: 5px;
+    transition: margin-left 0.2s ease;
+  }
+  
+  .btn-read-more:hover span {
+    margin-left: 10px;
+  }
+  
+  
+
+/* Footer styles */
+footer {
+    background-color: #f8f9fa;
+    color: #0c0d2b;
+    padding: 20px;
+}
+

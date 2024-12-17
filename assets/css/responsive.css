@@ -1,0 +1,25 @@
+/* Hide the text "Zigblog" on mobile devices */
+@media (max-width: 991px) {
+    .navbar-brand span {
+      display: none;
+    }
+  
+    /* Style for mobile view login and register buttons */
+    .d-lg-none .btn {
+      width: 100%;
+      margin-bottom: 10px; 
+    }
+  }
+  
+  /* Optional: Add styles for better button alignment on larger screens */
+  @media (min-width: 992px) {
+    .navbar-nav .nav-item {
+      margin-left: 10px;
+    }
+  
+    .navbar-nav .btn {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  

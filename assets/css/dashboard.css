@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* Main Background Container */
+body,
+.main-container {
+  background: linear-gradient(90deg, #17153B, #2E236C, #443e8d, #40244e);
+  color: white;
+  /* min-height: 100vh;
+    margin: 0;
+    padding: 0; */
+}
+
+.main-content {
+  margin-left: 0;
+  margin-top: 25px;
+}
+
+.main-section {
+  width: 100%;
+}
+
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: #0c0d2b;
+  width: 240px;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border-radius: 16px;
+  color: white;
+  z-index: 1;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo-img {
+  width: 60px; 
+  height: 60px; 
+  margin-bottom: 10px;
+}
+
+
+
+/* Sidebar Links */
+.sidebar .nav-link {
+  color: white;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(169, 169, 169, 0.2);
+  color: white;
+}
+
+.sidebar .nav-link.active {
+  background-color: transparent;
+  /* Remove active background */
+  color: white;
+}
+
+/* Content Area */
+.content {
+  /* margin-left: 270px; */
+  padding: 20px;
+}
+
+/* User Settings Icon */
+.user-settings {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.user-settings i {
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 50%;
+}
+
+.user-settings .dropdown-menu {
+  background-color: #0c0d2b;
+  color: white;
+  border: none;
+}
+
+.dropdown-item i {
+  /* font-size: 1.5rem; */
+  color: #0c0d2b;
+}
+
+.main-section {
+  background-color: #0c0d2b;
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+/* Custom card styling */
+.custom-card {
+  background-color: #0c0d2b;
+  color: #fff;
+  border: none;
+  width: 200px;
+  height: 100px;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.custom-card i {
+  color: #ffffff;
+  background-color: #582cff;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+/* Horizontal alignment for action-cards */
+.action-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1em; /* Adjusts space between cards */
+}
+
+
+
+/* Search bar styling */
+.search-bar .input-group {
+  max-width: 250px;
+  margin-left: auto;
+}
+
+/* Button styling in the search bar */
+.input-group .btn-outline-light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.input-group .btn-outline-light:hover {
+  background-color: #582cff;
+  color: #ffffff;
+}
+
+/* Table styling */
+.table-container table {
+  background-color: transparent;
+  color: #ffffff;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-container th,
+.table-container td {
+  color: #ffffff;
+  border-bottom: 1px solid #4f4d6b;
+  padding: 12px 15px;
+}
+
+/* Table header and row hover effects */
+.table-container th {
+  background-color: #0c0d2b;
+  text-align: left;
+}
+
+.table-container td {
+  border-top: 2px solid #4f4d6b;
+  background-color: #0c0d2b;
+  text-align: left;
+}
+
+.table-container tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* table action styles */
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0c0d2b;
+  border-radius: 3px;
+}
+
+
+/* Hover effect */
+.dropdown-item:hover {
+  background-color: #582cff;
+  color: #ffffff;
+}
+
+
+/* Pagination styling */
+.pagination .page-link {
+  background-color: #4f4d6b;
+  color: #ffffff;
+  border: 1px solid #4f4d6b;
+}
+
+.pagination .page-link:hover {
+  background-color: #ffffff;
+  color: #4f4d6b;
+  border: 1px solid #4f4d6b;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #0c0d2b;
+  color: #ffffff;
+  border-color: #0c0d2b;
+}
+
+/* Center pagination */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Add some spacing for date filter */
+.filter-date {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination-container {
+  margin-top: 20px;
+}
+
+/* Modal adjustments */
+.modal-dialog {
+  max-width: 600px;
+}
+
+.modal-body img {
+  width: 100%;
+  height: auto;
+}
+
+/* Common button styles */
+.status-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff; 
+}
+
+/* Inactive button style (Red when inactive) */
+.status-btn.inactive {
+  background-color: rgba(211, 67, 67, 0.3); /* Red background */
+}
+
+.status-btn.inactive i {
+  color: rgb(211, 67, 67); /* Red icon */
+}
+
+/* Active button style (Green when active) */
+.status-btn.active {
+  background-color: rgba(76, 175, 80, 0.3); 
+}
+
+.status-btn.active i {
+  color: #4CAF50; 
+}
+
+/* Hover effects */
+.status-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+ .header_text{
+  margin-left: 280px;
+ }
